@@ -16,7 +16,7 @@ public class Fase : Entity
     public Fase() { }
     public string Titulo { get; private init; }
     public string Descricao { get; private init; }
-    public int ConclusaoPorcentagem { get; private init; }
+    public int ConclusaoPorcentagem { get; private set; }
     public Guid PromessaId { get; private init; }
     public Promessa Promessa { get; private init; }
     public static Fase Create(string titulo, string descricao, int conclusaoPorcentagem, Guid promessaId)

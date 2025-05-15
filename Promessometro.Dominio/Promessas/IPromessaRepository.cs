@@ -4,5 +4,5 @@ namespace Promessometro.Dominio.Promessas;
 
 public interface IPromessaRepository : IRepository<Promessa>
 {
-    Task<List<Promessa>> GetPromessasComFases(CancellationToken cancellationToken);
+    Task<List<Promessa>> GetPromessasComFasesAsync(CancellationToken cancellationToken);
 }

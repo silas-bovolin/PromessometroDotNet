@@ -4,5 +4,5 @@ namespace Promessometro.Dominio.Vereadores;
 
 public interface IVereadorRepository : IRepository<Vereador>
 {
-    Task<List<Vereador>> GetVereadoresEVotos(CancellationToken cancellationToken);
+    Task<List<Vereador>> GetVereadoresEVotosAsync(CancellationToken cancellationToken);
 }

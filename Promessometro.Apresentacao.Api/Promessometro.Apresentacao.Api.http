@@ -1,0 +1,6 @@
+@Promessometro.Apresentacao.Api_HostAddress = http://localhost:5045
+
+GET {{Promessometro.Apresentacao.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

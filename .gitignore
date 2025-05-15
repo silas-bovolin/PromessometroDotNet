@@ -5,3 +5,6 @@
 /.vs/Promessometro
 /Promessometro.Aplicacao/obj
 /Promessometro.Dominio/obj
+/.vs/ProjectEvaluation
+/Promessometro.Apresentacao.Api/obj
+/Promessometro.Infraestrutura/obj
