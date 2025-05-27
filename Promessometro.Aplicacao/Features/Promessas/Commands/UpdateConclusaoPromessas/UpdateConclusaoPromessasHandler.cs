@@ -15,7 +15,7 @@ public class UpdateConclusaoPromessasHandler(
     {
         foreach (var promessa in request.Promessas)
         {
-            var promessaDesatualizada = await promessaRepository.GetById(promessa.Id, cancellationToken);
+            var promessaDesatualizada = await promessaRepository.GetByIdAsync(promessa.Id, cancellationToken);
 
             if (promessaDesatualizada is null)
             {
@@ -31,7 +31,7 @@ public class UpdateConclusaoPromessasHandler(
 
             foreach (var fase in promessa.Fases)
             {
-                var faseDesatualizada = await faseRepository.GetById(fase.Id, cancellationToken);
+                var faseDesatualizada = await faseRepository.GetByIdAsync(fase.Id, cancellationToken);
 
                 if (faseDesatualizada is null)
                 {

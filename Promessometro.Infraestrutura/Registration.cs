@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Promessometro.Aplicacao.Abstractions.Contracts;
 using Promessometro.Dominio.Abstractions;
 using Promessometro.Dominio.Fases;
@@ -14,9 +16,14 @@ namespace Promessometro.Infraestrutura;
 
 public static class Registration
 {
-    public static void ConfigureInfrastructureServices(this IServiceCollection services)
+    public static void ConfigureInfrastructureServices(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
-        services.AddDbContext<PromessometroContext>();
+        services.AddDbContext<PromessometroContext>(options =>
+        {
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"));
+        });
 
         services.AddScoped<IJwtProvider, JwtProvider>();
 

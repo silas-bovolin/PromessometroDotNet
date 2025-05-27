@@ -13,7 +13,7 @@ public class GetPromessasHandler(
 {
     public async Task<Result<List<PromessaResponse>>> Handle(GetPromessasQuery request, CancellationToken cancellationToken)
     {
-        var promessas = await promessaRepository.GetPromessasComFases(cancellationToken);
+        var promessas = await promessaRepository.GetPromessasComFasesAsync(cancellationToken);
         return mapper.Map<List<PromessaResponse>>(promessas);
     }
 }

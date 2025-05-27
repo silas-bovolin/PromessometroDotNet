@@ -16,8 +16,8 @@ public class GetDadosSigilometroHandler(
     private readonly IVereadorRepository vereadorRepository = vereadorRepository;
     public async Task<Result<SigilometroResponse>> Handle(GetDadosSigilometroQuery request, CancellationToken cancellationToken)
     {
-        var vereadores = await vereadorRepository.GetVereadoresEVotos(cancellationToken);
-        var requerimentos = await requerimentoRepository.GetAll(cancellationToken);
+        var vereadores = await vereadorRepository.GetVereadoresEVotosAsync(cancellationToken);
+        var requerimentos = await requerimentoRepository.GetAllAsync(cancellationToken);
 
         SigilometroResponse sigilometro = new();
         sigilometro.Vereadores = mapper.Map<List<VereadorResponse>>(sigilometro.Vereadores);
