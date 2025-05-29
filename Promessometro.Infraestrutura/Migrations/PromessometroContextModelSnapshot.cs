@@ -86,13 +86,15 @@ namespace Promessometro.Infraestrutura.Migrations
 
                     b.Property<string>("Codigo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasAlternateKey("Codigo");
 
                     b.ToTable("Requerimentos", (string)null);
                 });
@@ -126,7 +128,7 @@ namespace Promessometro.Infraestrutura.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CaminhoiImagem")
+                    b.Property<string>("CaminhoImagem")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

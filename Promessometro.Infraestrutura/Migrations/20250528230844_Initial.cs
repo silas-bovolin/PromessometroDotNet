@@ -31,13 +31,14 @@ namespace Promessometro.Infraestrutura.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Codigo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Codigo = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Aprovado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Requerimentos", x => x.Id);
+                    table.UniqueConstraint("AK_Requerimentos_Codigo", x => x.Codigo);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,7 +62,7 @@ namespace Promessometro.Infraestrutura.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Partido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CaminhoiImagem = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CaminhoImagem = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -13,7 +13,7 @@ public class LoginHandler(
     public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         var usuario = await usuarioRepository.ObterPorEmailAsync(request.Email, cancellationToken);
-
+        
         if (usuario is null)
         {
             return Result.Failure<string>(UsuarioErrors.EmailNaoEncontrada);

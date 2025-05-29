@@ -976,6 +976,7 @@
           "AutoMapper": "14.0.0",
           "Effortless.Net.Encryption": "4.1.0",
           "MediatR": "12.5.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
           "Promessometro.Dominio": "1.0.0"
         },
         "runtime": {

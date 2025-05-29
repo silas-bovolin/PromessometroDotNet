@@ -11,5 +11,7 @@ public class RequerimentoConfiguration : IEntityTypeConfiguration<Requerimento>
         builder.ToTable("Requerimentos");
 
         builder.HasKey(r => r.Id);
+
+        builder.HasAlternateKey(r => r.Codigo);
     }
 }

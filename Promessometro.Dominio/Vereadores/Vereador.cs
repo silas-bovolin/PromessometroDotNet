@@ -7,7 +7,7 @@ public class Vereador : Entity
 {
     public string Nome { get; private init; }
     public string Partido { get; private init; }
-    public string CaminhoiImagem { get; private init; }
+    public string CaminhoImagem { get; private init; }
     public List<Voto> Votos { get; private set; }
 
 }

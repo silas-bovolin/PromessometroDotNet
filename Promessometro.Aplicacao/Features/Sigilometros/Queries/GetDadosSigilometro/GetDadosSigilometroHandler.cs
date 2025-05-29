@@ -19,9 +19,11 @@ public class GetDadosSigilometroHandler(
         var vereadores = await vereadorRepository.GetVereadoresEVotosAsync(cancellationToken);
         var requerimentos = await requerimentoRepository.GetAllAsync(cancellationToken);
 
-        SigilometroResponse sigilometro = new();
-        sigilometro.Vereadores = mapper.Map<List<VereadorResponse>>(sigilometro.Vereadores);
-        sigilometro.QuantidadeRequerimentosAceitos = requerimentos.Where(r => r.Aprovado).Count();
+        SigilometroResponse sigilometro = new()
+        {
+            Vereadores = mapper.Map<List<VereadorResponse>>(vereadores),
+            QuantidadeRequerimentosAceitos = requerimentos.Where(r => r.Aprovado).Count()
+        };
         sigilometro.QuantidadeRequerimentosRejeitados = requerimentos.Count - sigilometro.QuantidadeRequerimentosAceitos;
 
         return sigilometro;
