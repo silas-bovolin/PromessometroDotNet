@@ -22,7 +22,7 @@ public static class Registration
     {
         services.AddDbContext<PromessometroContext>(options =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"));
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnectionString"));
         });
 
         services.AddScoped<IJwtProvider, JwtProvider>();

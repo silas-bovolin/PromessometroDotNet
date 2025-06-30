@@ -8,24 +8,24 @@ namespace Promessometro.Aplicacao.Features.Usuarios.Commands.Login;
 
 public class LoginHandler(
     IJwtProvider jwtProvider,
-    IUsuarioRepository usuarioRepository) : ICommandHandler<LoginCommand, string>
+    IUsuarioRepository usuarioRepository) : ICommandHandler<LoginCommand, LoginReponse>
 {
-    public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
+    public async Task<Result<LoginReponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         var usuario = await usuarioRepository.ObterPorEmailAsync(request.Email, cancellationToken);
         
         if (usuario is null)
         {
-            return Result.Failure<string>(UsuarioErrors.EmailNaoEncontrada);
+            return Result.Failure<LoginReponse>(UsuarioErrors.EmailNaoEncontrada);
         }
 
         if (!usuario.SenhaCriptografada.Equals(Criptografia.Criptografar(request.Senha)))
         {
-            return Result.Failure<string>(UsuarioErrors.SenhaIncorreta);
+            return Result.Failure<LoginReponse>(UsuarioErrors.SenhaIncorreta);
         }
 
         string token = jwtProvider.Generate(usuario);
 
-        return token;
+        return new LoginReponse(token); 
     }
 }

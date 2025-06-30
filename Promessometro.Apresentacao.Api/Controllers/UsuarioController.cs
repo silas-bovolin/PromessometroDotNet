@@ -11,9 +11,9 @@ public class UsuarioController(ISender sender) : ControllerBase
     private readonly ISender sender = sender;
 
     [HttpPost("Login")]
-    public async Task<IActionResult> Login(string email, string senha, CancellationToken cancellationToken)
+    public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest, CancellationToken cancellationToken)
     {
-        var result = await sender.Send(new LoginCommand(email, senha), cancellationToken);
+        var result = await sender.Send(new LoginCommand(loginRequest.Email, loginRequest.Senha), cancellationToken);
         return result.ToActionResult();
     }
 }

@@ -9,5 +9,5 @@ public class UsuarioRepository(PromessometroContext db) :
     IUsuarioRepository
 {
     public async Task<Usuario?> ObterPorEmailAsync(string email, CancellationToken cancellationToken)
-        => await DbSet.FirstOrDefaultAsync(u => u.Email.Equals(email), cancellationToken);
+        => await DbSet.FirstOrDefaultAsync(u => u.Email.ToLower().Equals(email.ToLower()), cancellationToken);
 }
