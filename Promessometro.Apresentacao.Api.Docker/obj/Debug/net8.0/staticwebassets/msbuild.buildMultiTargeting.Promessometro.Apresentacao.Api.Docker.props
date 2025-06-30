@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Promessometro.Apresentacao.Api.Docker.props" />
+</Project>

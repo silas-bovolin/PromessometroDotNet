@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Hwlmix1btR9Uo/YtdTC+SvpHUrVD+bnB2TxR8JT+wjc=",
+  "Source": "Promessometro.Apresentacao.Api.Docker",
+  "BasePath": "_content/Promessometro.Apresentacao.Api.Docker",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
