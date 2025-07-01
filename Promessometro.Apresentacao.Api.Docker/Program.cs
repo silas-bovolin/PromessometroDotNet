@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Promessometro.Apresentacao.Api.OptionsSetup;
 using Promessometro.Infraestrutura;
 using Promessometro.Aplicacao;
+using Promessometro.Infraestrutura.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,13 +33,18 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.UseCors("AllowAngularDev");
 }
 
-app.UseSwagger();
-app.UseSwaggerUI();
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<PromessometroContext>();
+    context.Database.EnsureCreated();
+}
 
-app.UseHttpsRedirection();
+    app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
