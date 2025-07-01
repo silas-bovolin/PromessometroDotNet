@@ -8,6 +8,7 @@ using Promessometro.Dominio.Promessas;
 using Promessometro.Dominio.Requerimentos;
 using Promessometro.Dominio.Usuarios;
 using Promessometro.Dominio.Vereadores;
+using Promessometro.Dominio.Votos;
 using Promessometro.Infraestrutura.Authentication;
 using Promessometro.Infraestrutura.Context;
 using Promessometro.Infraestrutura.Repositories;
@@ -32,6 +33,7 @@ public static class Registration
         services.AddScoped<IRequerimentoRepository, RequerimentoRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         services.AddScoped<IVereadorRepository, VereadorRepository>();
+        services.AddScoped<IVotoRepository, VotoRepository>();
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<PromessometroContext>());
     }

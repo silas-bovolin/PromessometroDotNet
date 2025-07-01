@@ -45,3 +45,17 @@
 /Promessometro.Infraestrutura/bin/Debug/net8.0/Promessometro.Infraestrutura.pdb
 /Promessometro.Servico.Requerimentos/obj
 /Promessometro.WebScraping/obj
+/Promessometro.Apresentacao.Api.Docker/bin/Debug/net8.0/Promessometro.Apresentacao.Api.Docker.deps.json
+/Promessometro.Apresentacao.Api.Docker/bin/Debug/net8.0/Promessometro.WebScraping.dll
+/Promessometro.Apresentacao.Api.Docker/bin/Debug/net8.0/Promessometro.WebScraping.pdb
+/Promessometro.Apresentacao.Api.Docker/obj/Debug/net8.0/Promessometro.Apresentacao.Api.Docker.csproj.CoreCompileInputs.cache
+/Promessometro.Apresentacao.Api.Docker/obj/Debug/net8.0/Promessometro.Apresentacao.Api.Docker.csproj.FileListAbsolute.txt
+/Promessometro.Apresentacao.Api.Docker/obj/project.assets.json
+/Promessometro.Apresentacao.Api.Docker/obj/project.nuget.cache
+/Promessometro.Apresentacao.Api.Docker/obj/Promessometro.Apresentacao.Api.Docker.csproj.nuget.dgspec.json
+/Promessometro.WebScraping/bin/Debug/net8.0
+/Promessometro.Apresentacao.Api.Docker/bin/Debug/net8.0
+/Promessometro.Apresentacao.Api.Docker/obj/Debug/net8.0/Promessometro.Apresentacao.Api.Docker.assets.cache
+/Promessometro.Apresentacao.Api.Docker/obj/Promessometro.Apresentacao.Api.Docker.csproj.nuget.g.targets
+/Promessometro.Servico.Requerimentos/bin/Debug/net8.0/runtimes/unix/lib/net6.0
+/Promessometro.Servico.Requerimentos/bin/Debug/net8.0

@@ -5,12 +5,14 @@ using Promessometro.Dominio.Abstractions;
 
 namespace Promessometro.Aplicacao.Features.Requerimentos.Commands.ProcessaRequerimentosSiteCamara;
 
-public class ProcessaRequerimentosSiteCamaraHandler
+public class ProcessaRequerimentosSiteCamaraHandler(
+    IExtratorDeVotacao extratoDaVotacao)
     : ICommandHandler<ProcessaRequerimentosSiteCamaraCommand, Unit>
 {
-    public Task<Result<Unit>> Handle(ProcessaRequerimentosSiteCamaraCommand request, CancellationToken cancellationToken)
+    public async Task<Result<Unit>> Handle(ProcessaRequerimentosSiteCamaraCommand request, CancellationToken cancellationToken)
     {
         //leitura dos arquivos
+        var requerimentos = await extratoDaVotacao.BuscarRequerimentosComVotacoesAsync();
         //para cada arquivo, identificação dos requerimentos e votações dos parlamentares
 
         //armazenamento no banco de dados

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Promessometro.Apresentacao.Api.OptionsSetup;
 using Promessometro.Infraestrutura;
+using Promessometro.WebScraping;
 using Promessometro.Aplicacao;
 using Promessometro.Infraestrutura.Context;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureApplicationServices();
 builder.Services.ConfigureInfrastructureServices(builder.Configuration);
+builder.Services.ConfigureWebScrapingServices(builder.Configuration);
 
 builder.Services.ConfigureOptions<JwtBearerOptionSetup>();
 builder.Services

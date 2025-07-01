@@ -1,12 +1,17 @@
+using MediatR;
+using Promessometro.Aplicacao.Features.Requerimentos.Commands.ProcessaRequerimentosSiteCamara;
+
 namespace Promessometro.Servico.Requerimentos
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly IServiceProvider serviceProvider;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
+            this.serviceProvider = serviceProvider;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -17,7 +22,14 @@ namespace Promessometro.Servico.Requerimentos
                 {
                     _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 }
-                await Task.Delay(1000, stoppingToken);
+
+                using (var scope = serviceProvider.CreateScope())
+                {
+                    var sender = scope.ServiceProvider.GetRequiredService<ISender>();
+                    await sender.Send(new ProcessaRequerimentosSiteCamaraCommand(), stoppingToken);
+                }
+
+                await Task.Delay(TimeSpan.FromDays(1), stoppingToken);
             }
         }
     }
