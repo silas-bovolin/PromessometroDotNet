@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promessometro.Infraestrutur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promessometro.Apresentacao.Api.Docker", "Promessometro.Apresentacao.Api.Docker\Promessometro.Apresentacao.Api.Docker.csproj", "{8156C372-BC4A-4622-9B59-056EB6F2FA4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promessometro.Servico.Requerimentos", "Promessometro.Servico.Requerimentos\Promessometro.Servico.Requerimentos.csproj", "{28EC6ADD-36FC-45AA-BAC0-F004FDE4235D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promessometro.WebScraping", "Promessometro.WebScraping\Promessometro.WebScraping.csproj", "{2DF058FE-77C5-4DF3-BAF2-854A666C36D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{8156C372-BC4A-4622-9B59-056EB6F2FA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8156C372-BC4A-4622-9B59-056EB6F2FA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8156C372-BC4A-4622-9B59-056EB6F2FA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28EC6ADD-36FC-45AA-BAC0-F004FDE4235D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28EC6ADD-36FC-45AA-BAC0-F004FDE4235D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28EC6ADD-36FC-45AA-BAC0-F004FDE4235D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28EC6ADD-36FC-45AA-BAC0-F004FDE4235D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF058FE-77C5-4DF3-BAF2-854A666C36D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF058FE-77C5-4DF3-BAF2-854A666C36D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF058FE-77C5-4DF3-BAF2-854A666C36D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF058FE-77C5-4DF3-BAF2-854A666C36D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +68,8 @@ Global
 		{1C756ABB-7D47-4041-85F6-D7E987C54B43} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{3CC30D3E-DD4A-4AF1-9ADA-6B78260F7251} = {6835A982-EFE0-488C-8EB2-A658B0900106}
 		{8156C372-BC4A-4622-9B59-056EB6F2FA4F} = {700FA440-01CA-4681-A410-8F4478D2745C}
+		{28EC6ADD-36FC-45AA-BAC0-F004FDE4235D} = {1C756ABB-7D47-4041-85F6-D7E987C54B43}
+		{2DF058FE-77C5-4DF3-BAF2-854A666C36D7} = {6835A982-EFE0-488C-8EB2-A658B0900106}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35C0512B-FA20-4D53-9C32-36A747DBDDA3}
