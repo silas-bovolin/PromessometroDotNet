@@ -20,12 +20,25 @@ internal class ExtratorDeVotacao(
     public async Task<List<Requerimento>> BuscarRequerimentosComVotacoesAsync()
     {
         vereadores = await vereadorRepository.GetAllAsync();
-        var client = httpClientFactory.CreateClient();
-        var html = await client.GetStringAsync(string.Concat(webScrappingSettings.Url, $"?dt_ini=01-01-{DateTime.Now.Year}"));
-        var htmlDoc = new HtmlDocument();
-        htmlDoc.LoadHtml(html);
-        var requerimentosProcessados = await BuscarArquivos(htmlDoc);
-        return requerimentosProcessados;
+        return await FiltrarArquivosEmCadaDiaEProcessarPdfs();
+    }
+
+    private async Task<List<Requerimento>> FiltrarArquivosEmCadaDiaEProcessarPdfs()
+    {
+        List<Requerimento> requerimentos = [];
+        var dataDeFiltroInicial = DateTime.Now.Date.AddDays(-webScrappingSettings.PeriodoDeBuscaEmDias);
+        while(dataDeFiltroInicial <= DateTime.Now.Date)
+        {
+            var client = httpClientFactory.CreateClient();
+            var url = RetornaUrl(dataDeFiltroInicial);
+            var html = await client.GetStringAsync(url);
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+            var requerimentosProcessados = await BuscarArquivos(htmlDoc);
+            requerimentos.AddRange(requerimentosProcessados);
+            dataDeFiltroInicial = dataDeFiltroInicial.AddDays(1);
+        }
+        return requerimentos;
     }
 
     private async Task<List<Requerimento>> BuscarArquivos(HtmlDocument htmlDoc)
@@ -115,5 +128,13 @@ internal class ExtratorDeVotacao(
         .Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
         .ToArray())
         .ToLower();
+    }
+
+    private string RetornaUrl(DateTime dataFiltro)
+    {
+        var dia = dataFiltro.Day;
+        var mes = dataFiltro.Month;
+        var ano = dataFiltro.Year;
+        return string.Concat(webScrappingSettings.Url, $"?dt_ini={dia}-{mes}-{ano}&dt_fim={dia}-{mes}-{ano}");
     }
 }
