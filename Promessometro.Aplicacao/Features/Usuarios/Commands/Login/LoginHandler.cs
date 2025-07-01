@@ -16,7 +16,7 @@ public class LoginHandler(
         
         if (usuario is null)
         {
-            return Result.Failure<LoginReponse>(UsuarioErrors.EmailNaoEncontrada);
+            return Result.Failure<LoginReponse>(UsuarioErrors.EmailNaoEncontrado);
         }
 
         if (!usuario.SenhaCriptografada.Equals(Criptografia.Criptografar(request.Senha)))
