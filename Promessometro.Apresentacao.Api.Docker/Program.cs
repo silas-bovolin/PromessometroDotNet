@@ -3,6 +3,7 @@ using Promessometro.Apresentacao.Api.OptionsSetup;
 using Promessometro.Infraestrutura;
 using Promessometro.Aplicacao;
 using Promessometro.Infraestrutura.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,10 +42,10 @@ if (app.Environment.IsDevelopment())
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<PromessometroContext>();
-    context.Database.EnsureCreated();
+    context.Database.Migrate();
 }
 
-    app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
