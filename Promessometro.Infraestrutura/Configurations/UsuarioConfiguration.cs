@@ -11,8 +11,5 @@ public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
         builder.ToTable("Usuarios");
 
         builder.HasKey(u => u.Id);
-
-        builder.HasData(
-            Usuario.Create("ADMINISTRADOR", "adm@gmail.com", "1h0ATANFe6x7kMHo1PURE74WI0ayevUwfK/+Ie+IWX/xWrFWngcVUwL/ewryn38EMVMQBFaNo4SaVwgXaBWnDw==", "", true));
     }
 }

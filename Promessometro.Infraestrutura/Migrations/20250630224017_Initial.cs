@@ -116,12 +116,7 @@ namespace Promessometro.Infraestrutura.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.InsertData(
-                table: "Usuarios",
-                columns: new[] { "Id", "Email", "Nome", "SenhaCriptografada" },
-                values: new object[] { new Guid("32c95da9-f7dc-4a22-94cc-126d43f635ed"), "adm@gmail.com", "ADMINISTRADOR", "1h0ATANFe6x7kMHo1PURE74WI0ayevUwfK/+Ie+IWX/xWrFWngcVUwL/ewryn38EMVMQBFaNo4SaVwgXaBWnDw==" });
-
+            
             migrationBuilder.InsertData(
                 table: "Vereadores",
                 columns: new[] { "Id", "CaminhoImagem", "Nome", "Partido" },
