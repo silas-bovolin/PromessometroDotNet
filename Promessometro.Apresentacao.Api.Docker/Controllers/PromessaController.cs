@@ -17,6 +17,7 @@ public class PromessaController(ISender sender) : ControllerBase
 {
     private readonly ISender sender = sender;
 
+    [Authorize]
     [HttpGet]
     public async Task<IActionResult> GetPromessas(CancellationToken cancellationToken)
     {

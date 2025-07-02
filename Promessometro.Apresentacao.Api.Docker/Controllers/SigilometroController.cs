@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Promessometro.Aplicacao.Features.Sigilometros.Queries.GetDadosSigilometro;
 
@@ -10,7 +11,8 @@ namespace Promessometro.Apresentacao.Api.Controllers;
 public class SigilometroController(ISender sender) : ControllerBase
 {
     private readonly ISender sender = sender;
-    
+
+    [Authorize]
     [HttpGet]
     public async Task<IActionResult> GetSigilometro(CancellationToken cancellationToken)
     {
