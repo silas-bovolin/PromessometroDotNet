@@ -21,7 +21,7 @@ public class GetDadosSigilometroHandler(
 
         SigilometroResponse sigilometro = new()
         {
-            Vereadores = mapper.Map<List<VereadorResponse>>(vereadores),
+            Vereadores = mapper.Map<List<VereadorResponse>>(vereadores).OrderByDescending(x => x.QuantidadeRequerimentosRejeitados).ToList(),
             QuantidadeRequerimentosAceitos = requerimentos.Where(r => r.Aprovado).Count()
         };
         sigilometro.QuantidadeRequerimentosRejeitados = requerimentos.Count - sigilometro.QuantidadeRequerimentosAceitos;
