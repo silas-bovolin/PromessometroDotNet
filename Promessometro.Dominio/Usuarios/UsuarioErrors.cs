@@ -14,7 +14,7 @@ public class UsuarioErrors
 
     public readonly static Error SenhaNaoAtendeRequisitos = new(
         "Usuario.SenhaNaoAtendeRequisitos",
-        "A senha informada não atende aos requisitos mínimos de segurança. Ela deve ter pelo menos 8 caracteres, incluindo pelo menos uma letra minúscula, uma letra maiúscula, um dígito e um caractere especial");
+        "A senha informada não atende aos requisitos mínimos de segurança. Ela deve ter pelo menos 5 caracteres");
 
     public readonly static Error EmailJaRegistrado = new(
         "Usuario.EmailJaRegistrado",

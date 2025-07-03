@@ -39,9 +39,7 @@ public partial class CadastroHandler(
             return Result.Failure<Unit>(UsuarioErrors.EmailInvalido);
         }
 
-        var senhaRegex = ValidadorSenha();
-
-        if (!senhaRegex.Match(request.Senha).Success)
+        if (request.Senha.Length < 5)
         {
             return Result.Failure<Unit>(UsuarioErrors.SenhaNaoAtendeRequisitos);
         }
@@ -65,8 +63,4 @@ public partial class CadastroHandler(
     //Email deve ester no padrão "xxxx@dominio"
     [GeneratedRegex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")]
     private static partial Regex ValidadorEmail();
-
-    //Senha deve ter pelo menos 8 caracteres, incluindo pelo menos uma letra minúscula, uma letra maiúscula, um dígito e um caractere especial
-    [GeneratedRegex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$")]
-    private static partial Regex ValidadorSenha();
 }
