@@ -75,7 +75,3 @@ GET /vereadores/{id}/votos  Number of votes against made by a specific councilor
 GET /promessas	            List of promises with fulfillment percentage
 GET /promessas/{id}	        Detailed information about a single promise
 ```
-
-🧪 Unit and integration tests
-
-📅 Automated data collection scheduling
