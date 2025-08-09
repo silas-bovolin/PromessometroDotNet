@@ -19,6 +19,7 @@ The **Promessômetro** project aims to:
 ## 🏗 Project Architecture
 
 The repository follows a **DDD (Domain-Driven Design)** structure:
+```
 Promessometro.sln
 ├── Promessometro.Apresentacao.Api.Docker → Docker container configuration
 ├── Promessometro.Servico.Requerimentos → Worker service for data collection via scraping
@@ -26,7 +27,7 @@ Promessometro.sln
 ├── Promessometro.Dominio → Domain entities and business rules
 ├── Promessometro.Infraestrutura → Persistence layer with EF
 ├── Promessometro.WebScraping → Web scraping logic to fetch official data
-
+```
 ## ⚙ Features by Layer
 
 ### 🌐 API Layer (Presentation)
@@ -61,21 +62,13 @@ Configure your appSettings.json with scraping sources and DB connection.
 
 Run the scraping service and test API endpoints with Postman, curl, or browser.
 
-🔗 Example API Endpoints (Suggestion)
-Endpoint	Description
-GET /requerimentos	List of requests, filterable by status (approved/rejected)
-GET /vereadores/{id}/votos	Number of votes against made by a specific councilor
-GET /promessas	List of promises with fulfillment percentage
-GET /promessas/{id}	Detailed information about a single promise
-
-🛤 Roadmap
-✅ Initial API setup
-
-🛠 Complete Application, Domain & Infrastructure layers
-
-🐳 Full Docker configuration (API + Worker + Database)
-
-📊 Swagger/OpenAPI documentation for endpoints
+🔗 API Endpoints
+```
+GET /requerimentos	        List of requests, filterable by status (approved/rejected)
+GET /vereadores/{id}/votos  Number of votes against made by a specific councilor
+GET /promessas	            List of promises with fulfillment percentage
+GET /promessas/{id}	        Detailed information about a single promise
+```
 
 🧪 Unit and integration tests
 
