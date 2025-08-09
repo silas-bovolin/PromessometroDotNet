@@ -1,27 +1,83 @@
-# Promessometro - Back-End Solution - .NET 8
+# 📊 Promessômetro (.NET)
 
-## 🚀 About Promessometro
+**Backend in C# (.NET 8)** built with **Domain-Driven Design (DDD)** architecture to monitor public information requests and promises in São José dos Campos, Brazil.
 
-Promessometro is a back-end solution build using C# language with .NET 8 framework and DDD (Domain-Driven Design) design pattern. The promessometro has the goal to compile information regarding the approval or veto of information requests made to the São José dos Campos City Council and follow up on the promises made by the City Hall.
+---
 
-The Presentation layer has two projects, an Restful API project and a service.
+## 📌 Overview
 
-## 🚪 Presentation Layer - Restful API
+The **Promessômetro** project aims to:
 
-This project has the achieve to publish data to front-end application. Informations about the promisses and the councilors' vote on information requests is disponible by endpoints.
-todo container docker
+- 🏛 **Track City Council Data** – Collect and publish statistics about information requests (requerimentos) submitted to the São José dos Campos City Council, including:
+  - ✅ Approved requests
+  - ❌ Rejected requests
+  - 📉 How many times each councilor voted *against* a request
+- 📈 **Track City Hall Promises** – Compile the promises made by the City Hall and calculate the percentage of fulfillment for each one.
 
-## ⚙ Presentation Layer - Service
-The service must execute diary to obtain the last data about the information request and their respective concil votes. This is made by Web Scraping, where the page is loaded in memory and analyse to obtain new data.
-todo Config appSettings
+---
 
-## Application Layer
-todo
+## 🏗 Project Architecture
 
-## Domain Layer
-todo
+The repository follows a **DDD (Domain-Driven Design)** structure:
+Promessometro.sln
+├── Promessometro.Apresentacao.Api → REST API that exposes data to the client
+├── Promessometro.Apresentacao.Api.Docker → Docker container configuration (in progress)
+├── Promessometro.Servico.Requerimentos → Worker service for data collection via scraping
+├── Promessometro.Aplicacao → Application logic (in progress)
+├── Promessometro.Dominio → Domain entities and business rules (in progress)
+├── Promessometro.Infraestrutura → Persistence layer with EF (in progress)
+├── Promessometro.WebScraping → Web scraping logic to fetch official data
 
-## Infrastructure layer
-todo
-EF
+## ⚙ Features by Layer
 
+### 🌐 API Layer (Presentation)
+- REST API to retrieve promises and council request data.
+- Endpoints for:
+  - Approved/rejected requests
+  - Votes against requests by each councilor
+  - Fulfillment percentage for city hall promises
+
+### 🛠 Worker Layer (Background Service)
+- Scheduled job that scrapes official sources daily.
+- Updates database with the latest council requests and voting stats.
+- Future improvements:
+  - Better `appSettings` configuration
+  - Deployment and scheduling via Docker/CRON
+
+### 📦 Application, Domain & Infrastructure Layers
+- **Application** → Business logic coordination  
+- **Domain** → Entities (`Vereador`, `Requerimento`, `Promessa`, etc.) and core rules  
+- **Infrastructure** → EF Core persistence, data access, and configuration
+
+---
+
+## 🚀 How to Run (Basic Steps)
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/silas-bovolin/PromessometroDotNet.git
+Open the solution in Visual Studio or run from CLI with .NET 8.
+
+Configure your appSettings.json with scraping sources and DB connection.
+
+Run the scraping service and test API endpoints with Postman, curl, or browser.
+
+🔗 Example API Endpoints (Suggestion)
+Endpoint	Description
+GET /requerimentos	List of requests, filterable by status (approved/rejected)
+GET /vereadores/{id}/votos	Number of votes against made by a specific councilor
+GET /promessas	List of promises with fulfillment percentage
+GET /promessas/{id}	Detailed information about a single promise
+
+🛤 Roadmap
+✅ Initial API setup
+
+🛠 Complete Application, Domain & Infrastructure layers
+
+🐳 Full Docker configuration (API + Worker + Database)
+
+📊 Swagger/OpenAPI documentation for endpoints
+
+🧪 Unit and integration tests
+
+📅 Automated data collection scheduling
