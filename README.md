@@ -1,4 +1,10 @@
 # 📊 Promessômetro (.NET)
+[![.NET](https://img.shields.io/badge/.NET%208-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![C#](https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
+[![Entity Framework](https://img.shields.io/badge/Entity%20Framework-Core%208-512BD4)](https://learn.microsoft.com/en-us/ef/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](../../pulls)
+[![Status](https://img.shields.io/badge/status-Done-green)]()
 
 **Backend in C# (.NET 8)** built with **Domain-Driven Design (DDD)** architecture to monitor public information requests and promises in São José dos Campos, Brazil.
 
