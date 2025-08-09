@@ -21,11 +21,16 @@ The **Promessômetro** project aims to:
 The repository follows a **DDD (Domain-Driven Design)** structure:
 Promessometro.sln
 ├── Promessometro.Apresentacao.Api → REST API that exposes data to the client
+
 ├── Promessometro.Apresentacao.Api.Docker → Docker container configuration (in progress)
+
 ├── Promessometro.Servico.Requerimentos → Worker service for data collection via scraping
 ├── Promessometro.Aplicacao → Application logic (in progress)
+
 ├── Promessometro.Dominio → Domain entities and business rules (in progress)
+
 ├── Promessometro.Infraestrutura → Persistence layer with EF (in progress)
+
 ├── Promessometro.WebScraping → Web scraping logic to fetch official data
 
 ## ⚙ Features by Layer
