@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Promessometro.Infraestrutura.Context;
@@ -11,9 +12,11 @@ using Promessometro.Infraestrutura.Context;
 namespace Promessometro.Infraestrutura.Migrations
 {
     [DbContext(typeof(PromessometroContext))]
-    partial class PromessometroContextModelSnapshot : ModelSnapshot
+    [Migration("20250825221143_adicionandopromessas")]
+    partial class adicionandopromessas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -857,7 +860,7 @@ namespace Promessometro.Infraestrutura.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("520f600e-ccdf-4a59-898f-d0c4be82d280"),
+                            Id = new Guid("32ec5321-5b2b-4dfe-992b-b9748d035e82"),
                             AceitouOsTermos = true,
                             Email = "adm@gmail.com",
                             Nome = "ADMINISTRADOR",
@@ -891,148 +894,148 @@ namespace Promessometro.Infraestrutura.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b9cbf0ac-ec12-4a9f-91ab-bde2ccc93448"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/1b2tm1j43b44bi2878n1.jpg",
+                            Id = new Guid("91aa8f43-adb8-4327-965d-29d52a6f5720"),
+                            CaminhoImagem = "amelianaomi.jpg",
                             Nome = "Amélia Naomi",
                             Partido = "PT"
                         },
                         new
                         {
-                            Id = new Guid("0c0a2f2c-9387-487c-b1f3-b3a2369de884"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/nka40a6581ghp7uuc263.jpg",
+                            Id = new Guid("5540a4e3-064e-4d83-84d8-6d23f129e637"),
+                            CaminhoImagem = "carlosabranches.jpg",
                             Nome = "Carlos Abranches",
                             Partido = "CIDADANIA"
                         },
                         new
                         {
-                            Id = new Guid("b36e72c6-2548-43d3-becc-f45e6e36255e"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/2h3fn76bsw3xjchm50m6.jpg",
+                            Id = new Guid("ceeb2582-610c-44d1-8618-3e10043a7f27"),
+                            CaminhoImagem = "claudioapolinario.jpg",
                             Nome = "Cláudio Apolinário",
                             Partido = "PSD"
                         },
                         new
                         {
-                            Id = new Guid("3a94564c-1048-4f45-b4f2-0bd58508de26"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/261s12lofv4q281is652.jpg",
+                            Id = new Guid("35252558-5c54-40c2-8054-9b7e5e19acd7"),
+                            CaminhoImagem = "fabiaozagueiro.jpg",
                             Nome = "Fabião Zagueiro",
                             Partido = "PSD"
                         },
                         new
                         {
-                            Id = new Guid("53e28a74-9110-4f7b-a138-979280880846"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/y1epxj4jt6526xsc33b7.jpg",
+                            Id = new Guid("1e2e0c25-7e51-479a-b672-0bb7f0b24605"),
+                            CaminhoImagem = "fernandopetiti.jpg",
                             Nome = "Fernando Petiti",
                             Partido = "PSDB"
                         },
                         new
                         {
-                            Id = new Guid("2581c60f-8e4a-4a51-9499-c8d4ef4588e8"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/2nw2d3kmtm8eaus81j38.jpg",
+                            Id = new Guid("3908a6b3-51e9-48e8-b433-caea24dd12a6"),
+                            CaminhoImagem = "gilsoncampos.jpg",
                             Nome = "Gilson Campos",
                             Partido = "PRD"
                         },
                         new
                         {
-                            Id = new Guid("91cef42c-8fae-4ae6-8eda-5b7857f86325"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/5jv7j63k76721878fkha.jpg",
+                            Id = new Guid("3915ca1b-78d2-49fe-85d7-8223c73e744c"),
+                            CaminhoImagem = "julianafraga.jpg",
                             Nome = "Juliana Fraga",
                             Partido = "PT"
                         },
                         new
                         {
-                            Id = new Guid("dc958b0c-8f71-419a-aa82-f342d3e16a52"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/50a1ksm38yqo07a70y23.jpg",
+                            Id = new Guid("5b4c7b49-e707-4050-810c-a72bfcb53949"),
+                            CaminhoImagem = "linobispo.jpg",
                             Nome = "Lino Bispo",
                             Partido = "PL"
                         },
                         new
                         {
-                            Id = new Guid("a8f89a6b-3547-4114-9893-f930c6d7d04f"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/l706down3d3r37q8mb40.jpg",
+                            Id = new Guid("15699966-86d5-4d82-9ead-3b1b649145bc"),
+                            CaminhoImagem = "marcaodaacademia.jpg",
                             Nome = "Marcão da Academia",
                             Partido = "PSD"
                         },
                         new
                         {
-                            Id = new Guid("7b853f0f-06ef-4069-b87c-94cdf33ba0d6"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/kx44kd5w57y333geu33i.jpg",
+                            Id = new Guid("4890165d-36ed-4165-b2db-80847e6f8af1"),
+                            CaminhoImagem = "marcelogarcia.jpg",
                             Nome = "Marcelo Garcia",
                             Partido = "PRD"
                         },
                         new
                         {
-                            Id = new Guid("552c3d8d-9293-4128-839a-ac064ce1c627"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/x782015ys02p1u205nyq.jpg",
+                            Id = new Guid("acac26a9-0ed8-41a3-b1be-a757115d9e7e"),
+                            CaminhoImagem = "miltonvieirafilho.jpg",
                             Nome = "Milton Vieira Filho",
                             Partido = "REPUBLICANOS"
                         },
                         new
                         {
-                            Id = new Guid("ada52ad0-9caa-45f4-84e8-efc279ae8013"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/5co8mw162kh72optvxv7.jpg",
+                            Id = new Guid("beb9ce2a-2c86-4046-b4e5-6e407a042270"),
+                            CaminhoImagem = "rafaelpascucci.jpg",
                             Nome = "Rafael Pascucci",
                             Partido = "PSD"
                         },
                         new
                         {
-                            Id = new Guid("eaf216c9-a8ac-45a1-8863-0efa0bf71a4b"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/w2df70h1ac0m6g28y8f5.jpg",
+                            Id = new Guid("8d7f5027-6aa1-4192-9c8c-2aa2ecd1dab6"),
+                            CaminhoImagem = "renatosantiago.jpg",
                             Nome = "Renato Santiago",
                             Partido = "UNIÃO"
                         },
                         new
                         {
-                            Id = new Guid("9a55c214-d216-4458-9bc0-8fd0fd77b195"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/11x3521c2h31ms7o7ptt.jpg",
+                            Id = new Guid("e146f7b3-9fb6-4cbf-9173-4911a7daa122"),
+                            CaminhoImagem = "robertochagas.jpg",
                             Nome = "Roberto Chagas",
                             Partido = "PL"
                         },
                         new
                         {
-                            Id = new Guid("8196c9e3-44bb-451a-9ffe-5210b74cb1ab"),
-                            CaminhoImagem = "https://www.camarasjc.sp.gov.br/arquivo/thumb/vereadores/43b65ee2678cc21d127e_336x441_0_0.jpg",
+                            Id = new Guid("35d94842-8122-471d-99d5-96d297db4e4b"),
+                            CaminhoImagem = "robertodoeleven.jpg",
                             Nome = "Roberto do Eleven",
                             Partido = "PSD"
                         },
                         new
                         {
-                            Id = new Guid("7ae3aafb-66af-4cfa-89d0-d5cf3d6fe0be"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/7188t2p5tn44teiyxp21.jpg",
+                            Id = new Guid("a16e9e8f-4c53-4cf9-9976-a3f8140e863b"),
+                            CaminhoImagem = "rogeriodaacasem.jpg",
                             Nome = "Rogério da Acasem",
                             Partido = "PP"
                         },
                         new
                         {
-                            Id = new Guid("d714732e-b37b-488b-ba28-4c4227b13959"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/5ky0k0nfx04e7343q0u6.jpg",
+                            Id = new Guid("23e1cfe8-3b5d-48fd-83c0-d15aa8621a70"),
+                            CaminhoImagem = "senna.jpg",
                             Nome = "Senna",
                             Partido = "PL"
                         },
                         new
                         {
-                            Id = new Guid("f29f99af-3320-4bc9-91e9-de9afcb485e0"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/m003n58e7y20dh5q16e0.jpg",
+                            Id = new Guid("181aa82a-2bc3-489d-b0e1-cb052e540552"),
+                            CaminhoImagem = "sergiocamargo.jpg",
                             Nome = "Sérgio Camargo",
                             Partido = "PL"
                         },
                         new
                         {
-                            Id = new Guid("612427d9-0349-4aac-8fee-c6e733172ec9"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/76en5j22dic35juc4w40.jpg",
+                            Id = new Guid("fc132ac6-609f-48f6-b302-8d910e0fbb9f"),
+                            CaminhoImagem = "sidneycampos.jpg",
                             Nome = "Sidney Campos",
                             Partido = "PSDB"
                         },
                         new
                         {
-                            Id = new Guid("abf89b21-2c5d-4e84-91a2-3ff05f295194"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/4a7v208k545r10rve48p.jpg",
+                            Id = new Guid("c524c2e9-ed7f-4fca-a1e5-c866ee967c0a"),
+                            CaminhoImagem = "thomazhenrique.jpg",
                             Nome = "Thomaz Henrique",
                             Partido = "PL"
                         },
                         new
                         {
-                            Id = new Guid("6181f4d3-7a10-4a83-9aca-33d7684e7660"),
-                            CaminhoImagem = "https://camarasempapel.camarasjc.sp.gov.br/arquivo/images/pessoas/fngh4n0h1l76y1y213ua.jpg",
+                            Id = new Guid("f15fc27b-dc67-417d-afdb-db2922c336a2"),
+                            CaminhoImagem = "zeluis.jpg",
                             Nome = "Zé Luís",
                             Partido = "PSD"
                         });
