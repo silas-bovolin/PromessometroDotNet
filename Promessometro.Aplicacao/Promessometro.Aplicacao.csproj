@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resolvers\**" />
+    <EmbeddedResource Remove="Resolvers\**" />
+    <None Remove="Resolvers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Effortless.Net.Encryption" Version="4.1.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
@@ -15,10 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Promessometro.Dominio\Promessometro.Dominio.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resolvers\" />
   </ItemGroup>
 
 </Project>
