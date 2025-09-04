@@ -10,6 +10,7 @@ public class VereadorProfile : Profile
     {
         CreateMap<Vereador, VereadorResponse>()
             .ForMember(v => v.ImagemUrl, opt => opt.MapFrom(v => v.CaminhoImagem))
-            .ForMember(v => v.QuantidadeRequerimentosRejeitados, opt => opt.MapFrom(v => v.Votos.Where(x => !x.Aprovacao).Count()));
+            .ForMember(v => v.QuantidadeRequerimentosRejeitados, opt => opt.MapFrom(v => v.Votos.Where(x => !x.Aprovacao).Count()))
+            .ForMember(v => v.QuantidadeRequerimentosAceitos, opt => opt.MapFrom(v => v.Votos.Where(x => x.Aprovacao).Count()));
     }
 }
